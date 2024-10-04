@@ -5,20 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simp for Laughs</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Adding Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
-            margin: 0;
             padding: 0;
+            overflow: hidden; /* Ensure content doesn't spill out */
         }
+
+        /* Background image with blur and darkening */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img1.jpg'); /* Background image */
+            background-size: auto; /* Make sure image covers the entire area */
+            background-position: center;
+            filter: blur( 10px) brightness(80%); /* Apply blur and darken */
+            z-index: -1; /* Ensure background is behind the content */
+        }
+
         #image-container {
             position: relative;
             display: inline-block;
             max-width: 100%;
             overflow: hidden; /* Prevents overflow */
         }
+
         #quote {
             position: absolute;
             bottom: 10%;
@@ -31,12 +49,14 @@
             text-align: center;
             margin: 0;
         }
+
         #hero-image {
             width: 100%; /* Makes image responsive */
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         button {
             padding: 10px 20px;
             font-size: 16px; /* Set a fixed font size for the button */
@@ -54,6 +74,7 @@
             #quote {
                 font-size: 4vw; /* Adjusted for better readability */
             }
+
             button {
                 font-size: 16px; /* Consistent button size */
             }
@@ -63,6 +84,7 @@
 <body>
 
     <h1>Simp for Laughs</h1>
+    <p>click generate new! </p>
     <div id="image-container">
         <img id="hero-image" src="" alt="Random Heroic Pose">
         <p id="quote">Loading quote...</p>
